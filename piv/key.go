@@ -448,6 +448,8 @@ const (
 	AlgorithmEd25519
 	AlgorithmRSA1024
 	AlgorithmRSA2048
+	AlgorithmRSA3072
+	AlgorithmRSA4096
 )
 
 // PINPolicy represents PIN requirements when signing or decrypting with an
@@ -531,6 +533,8 @@ var algorithmsMap = map[Algorithm]byte{
 	AlgorithmEd25519: algEd25519,
 	AlgorithmRSA1024: algRSA1024,
 	AlgorithmRSA2048: algRSA2048,
+	AlgorithmRSA3072: algRSA3072,
+	AlgorithmRSA4096: algRSA4096,
 }
 
 var algorithmsMapInv = map[byte]Algorithm{
@@ -539,6 +543,8 @@ var algorithmsMapInv = map[byte]Algorithm{
 	algEd25519: AlgorithmEd25519,
 	algRSA1024: AlgorithmRSA1024,
 	algRSA2048: AlgorithmRSA2048,
+	algRSA3072: AlgorithmRSA3072,
+	algRSA4096: AlgorithmRSA4096,
 }
 
 // AttestationCertificate returns the YubiKey's attestation certificate, which

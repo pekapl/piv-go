@@ -61,11 +61,12 @@ const (
 	alg3DES    = 0x03
 	algRSA1024 = 0x06
 	algRSA2048 = 0x07
+	algRSA3072 = 0x05
+	algRSA4096 = 0x16
 	algECCP256 = 0x11
 	algECCP384 = 0x14
-	// non-standard; as implemented by SoloKeys. Chosen for low probability of eventual
-	// clashes, if and when PIV standard adds Ed25519 support
-	algEd25519 = 0x22
+	// https://docs.yubico.com/hardware/yubikey/yk-tech-manual/5.7-firmware-specifics.html#generate-a-new-key-pair
+	algEd25519 = 0xE0
 
 	// https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-78-4.pdf#page=16
 	keyAuthentication     = 0x9a
