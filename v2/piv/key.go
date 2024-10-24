@@ -678,6 +678,13 @@ func (yk *YubiKey) KeyInfo(slot Slot) (KeyInfo, error) {
 		param2:      byte(slot.Key),
 	}
 	resp, err := yk.tx.Transmit(cmd)
+
+	var e *apduErr
+
+	if errors.As(err, &e) && e.sw1 == 0x6A && (e.sw2 == 0x82 || e.sw2 == 0x88) {
+		return KeyInfo{}, ErrNotFound
+	}
+
 	if err != nil {
 		return KeyInfo{}, fmt.Errorf("command failed: %w", err)
 	}
