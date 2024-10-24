@@ -1,3 +1,3 @@
-module github.com/go-piv/piv-go/v2
+module github.com/pekapl/piv-go/v2
 
 go 1.20
